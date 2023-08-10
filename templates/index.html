@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Classifier</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles.css')}}">
+</head>
+
+<body>
+    <div class="body-wrap">
+        <form action="http://127.0.0.1:5000/" method="post" enctype="multipart/form-data">
+            <label class="custom-file-upload">
+                Choose File
+                <input type="file" name="file" id="fileInput">
+            </label>
+            <br>
+            {% if filename %}
+            <h2 id="filenameDisplay">{{filename}}</h2>
+            {%else%}
+            <h2 id="filenameDisplay">No file chosen</h2>
+            {%endif%}
+            <br>
+            <input type="submit" value="Upload">
+
+        </form>
+        {% if image %}
+        <img src="{{image}}" alt="" width="200" height="200">
+        {%else%}
+        <h1>no image</h1>
+        {%endif%}
+        {% if pokemon == 1 %}
+        <h1>Chramander</h1>
+        {% elif pokemon == 2 %}
+        <h1>Squirtle</h1>
+        {% elif pokemon == 3 %}
+        <h1>Pikachu</h1>
+        {% elif pokemon == 4 %}
+        <h1>Bulbasaur</h1>
+        {% else %}
+        <h1>no pokemon</h1>
+        {%endif%}
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const fileInput = document.getElementById('fileInput');
+            const filenameDisplay = document.getElementById('filenameDisplay');
+
+            fileInput.addEventListener('change', function () {
+                if (fileInput.files.length > 0) {
+                    if (!allowed_file(fileInput.value)) {
+                        alert('Please choose a valid image file (PNG, JPG, JPEG).');
+                        fileInput.value = '';  // Clear the file input
+                        filenameDisplay.textContent = 'No file chosen';
+                    } else {
+                        filenameDisplay.textContent = 'Selected file: ' + fileInput.files[0].name;
+                    }
+                } else {
+                    filenameDisplay.textContent = '';
+                }
+            });
+
+            function allowed_file(filename) {
+                const allowedExtensions = new Set(['png', 'jpg', 'jpeg']);
+                const extension = filename.split('.').pop().toLowerCase();
+                return allowedExtensions.has(extension);
+            }
+        });
+    </script>
+</body>
+
+</html>
