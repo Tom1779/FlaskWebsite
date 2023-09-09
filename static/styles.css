@@ -28,11 +28,11 @@ body {
 @-webkit-keyframes slidein {
     from {
         background-position: top;
-        background-size: 3000px;
+        background-size: 2750px;
     }
 
     to {
-        background-position: -100px 0px;
+        background-position: 0px 0px;
         background-size: 2750px;
     }
 }
@@ -40,11 +40,11 @@ body {
 @keyframes slidein {
     from {
         background-position: top;
-        background-size: 3000px;
+        background-size: 2750px;
     }
 
     to {
-        background-position: -100px 0px;
+        background-position: 0px 0px;
         background-size: 2750px;
     }
 }
@@ -101,10 +101,29 @@ form input[type=submit]:hover {
     background-color: #2980b9;
 }
 
+.message_box{
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-left: 30%;
+    margin-right: 30%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.message{
+    color: yellow;
+}
+
 
 h1 {
     margin: 0;
-    color: blueviolet;
+    color: yellow;
+}
+
+h2{
+    color: yellow;
 }
 .Charizard{
     position: absolute;
@@ -114,6 +133,7 @@ h1 {
     height: 15vh;
     animation: fly 120s forwards linear;
     animation-iteration-count: infinite;
+    animation-delay: 2s;
 }
 
 @keyframes fly {

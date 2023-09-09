@@ -9,8 +9,8 @@
 </head>
 
 <body>
-    <img class="Charizard" src="{{url_for('static',filename='assets/Charizard.gif')}}" alt="">
     <div class="body-wrap">
+        <img class="Charizard" src="{{url_for('static',filename='assets/Charizard.gif')}}" alt="">
         <form method="post" enctype="multipart/form-data">
             <label class="custom-file-upload">
                 Choose File
@@ -43,7 +43,11 @@
         <h1>no pokemon</h1>
         {%endif%}
 
-        <p>Currently only works for Pikachu, Charmander, Bulbasaur, and Squirtle</p>
+        <div class="message_box">
+            <p class="message">
+                Currently only works for Pikachu, Charmander, Bulbusaur, and Squirtle
+            </p>
+        </div>
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
