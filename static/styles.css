@@ -1,15 +1,64 @@
 /* Reset margins and paddings for body and .body-wrap */
-body, .body-wrap {
+body,
+.body-wrap {
     margin: 0;
     padding: 0;
 }
 
-.body-wrap{
-    height: 100vh;
-    width: 100vw;
-    background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
-    text-align: center;
-    padding-top: 20vh;
+body {
+    background-image: url('https://static.pexels.com/photos/414171/pexels-photo-414171.jpeg');
+    background-size: cover;
+    -webkit-animation: slidein 70s;
+    animation: slidein 70s;
+
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+@-webkit-keyframes slidein {
+    from {
+        background-position: top;
+        background-size: 3000px;
+    }
+
+    to {
+        background-position: -100px 0px;
+        background-size: 2750px;
+    }
+}
+
+@keyframes slidein {
+    from {
+        background-position: top;
+        background-size: 3000px;
+    }
+
+    to {
+        background-position: -100px 0px;
+        background-size: 2750px;
+    }
+}
+
+.body-wrap
+{
+  padding-top: 20vh;
+  width: 100%;
+  height: 80vh;
+  text-align: center;
+  background: rgba(75, 75, 250, 0.3);
+  border-radius: 3px;
+  position: absolute;
+  z-index: 1;
 }
 
 form {
@@ -53,7 +102,22 @@ form input[type=submit]:hover {
 }
 
 
-h1{
+h1 {
     margin: 0;
     color: blueviolet;
 }
+.Charizard{
+    position: absolute;
+    top: 0;
+    right: -10%;
+    z-index: 0;
+    height: 15vh;
+    animation: fly 120s forwards linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes fly {
+    0%   {right:-10%;}
+    11% {right: 100%;}
+    100% {right: 110%;}
+  }
