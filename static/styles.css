@@ -28,7 +28,7 @@ body {
 @-webkit-keyframes slidein {
     from {
         background-position: top;
-        background-size: 2750px;
+        background-size: 3000px;
     }
 
     to {
@@ -40,7 +40,7 @@ body {
 @keyframes slidein {
     from {
         background-position: top;
-        background-size: 2750px;
+        background-size: 3000px;
     }
 
     to {
@@ -126,14 +126,12 @@ h2{
     color: yellow;
 }
 .Charizard{
-    position: absolute;
+    position:fixed;
     top: 0;
-    right: -10%;
     z-index: 0;
     height: 15vh;
     animation: fly 120s forwards linear;
     animation-iteration-count: infinite;
-    animation-delay: 2s;
 }
 
 @keyframes fly {
