@@ -1,12 +1,9 @@
 import os
 from flask import Flask, render_template, request
-from werkzeug.utils import secure_filename
-from flask_wtf import FlaskForm
 from keras.models import load_model
 import numpy as np
-from sklearn.model_selection import train_test_split
-import cv2
 import tensorflow as tf
+import cv2
 
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
@@ -43,4 +40,4 @@ def index():
     return render_template('index.html', image=image, pokemon=pokemon, filename=None)
 
 if __name__=="__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=3000, debug=True)
