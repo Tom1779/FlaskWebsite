@@ -1,4 +1,3 @@
-env
 static/assets/*
 !static/assets/.gitkeep
-!static/assets/Charizard.gif
+static/assets/Charizard.gif
